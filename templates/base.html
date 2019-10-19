@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+        {% block meta %}{% endblock meta %}
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" id="color" href="{% static 'css/blue.css' %}">
+        <link rel="stylesheet" href="{% static 'css/medicom.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+        {% block inhead %}{% endblock inhead %}
+        <link rel="stylesheet" href="{% static 'css/forstyle.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link  href="{% static 'revolution-slider/css/settings.css' %}" rel="stylesheet" type="text/css"/>
+        <link  href="{% static 'revolution-slider/css/layers.css' %}" rel="stylesheet" type="text/css"/>
+        <link  href="{% static 'revolution-slider/css/navigation.css' %}" rel="stylesheet" type="text/css"/>
+
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    </head>
+    <body class="fixed-header">
+        <div id="wrapper" class="clearfix">
+        <div class="pads"></div>
+            <header id="header" class="medicom-header">
+                <!-- <div class="colourfull-row"></div> -->
+                <div class="container">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-nav">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html"><img src="{% static 'myimg/logo.png' %}" alt="" title=""></a>
+                        </div>
+                        <div class="collapse navbar-collapse navbar-right" id="primary-nav">
+                            <ul class="nav navbar-nav">
+                                <li><a href="{% url 'index-page' %}">Home</a></li>
+                                <li><a href="{% url 'about-page' %}">About Us</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services</a>
+                                    <ul class="dropdown-menu">
+                                        {% for cat in category %}
+                                            <li><a href="/Service-Detail/{{ cat.id }}/{{ cat.name | slugify }}">{{ cat.name }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li><a href="{% url 'team-page' %}">Team</a></li>
+                                <li><a href="{% url 'gallery-page' %}">Gallery</a></li>
+                                <li><a href="{% url 'blog-page' %}">Blog</a></li>
+                                <li><a href="{% url 'contact-page' %}">Contact Us</a></li>
+                                
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            {% block content %}{% endblock content %}
+            <!--end content-index-->
+            <div class="colourfull-row"></div>
+            <footer id="footer" class="light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <!-- Footer Widget
+                            ============================================= -->
+                            <div class="footer-widget">
+                                <h4><span>Quick Links</span></h4>
+                                <ul class="footer-nav list-unstyled clearfix widthchang">
+                                    <li><a href="{% url 'index-page' %}">Home</a></li>
+                                    <li><a href="{% url 'about-page' %}">About Us</a></li>
+                                    <li><a href="{% url 'team-page' %}">Team</a></li>
+                                    <li><a href="{% url 'gallery-page' %}">Gallery</a></li>
+                                    <li><a href="{% url 'blog-page' %}">Blog</a></li>
+                                    <li><a href="{% url 'contact-page' %}">Contact Us</a></li>
+                                    {% comment %} {% for cat in category %}
+                                        <li><a href="/Service-Detail/{{ cat.id }}/{{ cat.name | slugify }}">{{ cat.name }}</a></li>
+                                    {% endfor %} {% endcomment %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <!-- Footer Widget
+                            ============================================= -->
+                            <div class="footer-widget">
+                                <h4><span>Our Services</span></h4>
+                                <ul class="footer-nav list-unstyled clearfix widthchang">
+                                    {% for cat in category %}
+                                        <li><a href="/Service-Detail/{{ cat.id }}/{{ cat.name | slugify }}">{{ cat.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <!-- Footer Widget
+                            ============================================= -->
+                            <div class="footer-widget">
+                                <h4><span>get in touch</span></h4>
+                                <div class="contact-widget">
+                                    <i class="fa fa-home"></i>
+                                    <p><a href="https://www.google.com/maps/place/Lifetree+Healthcare+%26+Diagnostic,+Polyclinic,+Sonography+Centre,+Color+Doppler+in+Hinjewadi/@18.5915113,73.7439204,15z/data=!4m2!3m1!1s0x0:0xb370f3312216fce3?sa=X&ved=2ahUKEwiwzJWyuvjkAhUD73MBHUmTATIQ_BIwE3oECA8QCA">
+                                    Medicom Ltd, Manhattan 1258, New York, USA Lahore</a></p>
+                                    <i class="fa fa-envelope"></i>
+                                    <p><a href="mailto: ">lifetree@lifetree.com</a></p>
+                                    <i class="fa fa-mobile"></i>
+                                    <p><a href="tel: 918379092000 ">+91 8379092000</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                                <!-- Footer Widget
+                                ============================================= -->
+                                <div class="footer-widget">
+                                    <h4><span>Facebook</span></h4>
+                                    <div class="twitter-widget">
+                                            <div class="fb-page" data-href="https://www.facebook.com/Pediatric-center-and-surgical-clinic-Aundh-341799735956172" data-tabs="timeline" data-height="218" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Pediatric-center-and-surgical-clinic-Aundh-341799735956172" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Pediatric-center-and-surgical-clinic-Aundh-341799735956172"></a></blockquote></div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <!-- Copyright
+                ============================================= -->
+                <p class="copyright text-center">Copyright &copy; {% now 'Y' %} Lifetree All Rights Reserved. Design & Developed By <a href="http://touchmediaads.com">Touchmedia Ads</a></p>
+                <!-- Footer Bottom
+                ============================================= -->
+            </footer>
+            <a href="#." class="back-to-top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+        </div>
+        <div id="AppointMent">
+            <div class="forbg">
+                <div class="forform">
+                    <div class="close">x</div>
+                    <p class="someInfo">Get an appointment now.</p>
+                    <h5 class="abts">MAKE AN APPOINTMENT</h5>
+                    <form class="formSubmi" action="" data="BurnItDown" method="POST" sus="Subscription Request Send">
+                        <div class="form-group">
+                            <input type="text" notsl="no" vali="yes" class="form-control" name="name" placeholder="Your Name *">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" notsl="no" vali="yes" class="form-control" name="phone"
+                                placeholder="Your 10 Digit Phone Number *">
+                        </div>
+                        <div class="form-group">
+                                <input type="email" class="form-control" notsl="no" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" notsl="no" name="message" placeholder="Your message"  rows="7"></textarea>
+                        </div>
+                        
+                        <div class="showerror"></div>
+                        <div class="submit-button">
+                            <button class="btn join" type="submit"><i class="fa fa-calendar"></i> Make an Appointment</button>
+                            <div class="clearfix"></div>
+                        </div>
+                        <input type="hidden" name="phoneNumber" value="no">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="icon-barss">
+            <a href="https://www.facebook.com/Pediatric-center-and-surgical-clinic-Aundh-341799735956172" class="facebook"><i class="fa fa-facebook"></i></a> 
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a> 
+            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="#" class="whatapp"><i class="fa fa-whatsapp"></i></a> 
+        </div>
+        <a class="naviga" target="_blank" href="https://www.google.com/maps/place/Lifetree+Healthcare+%26+Diagnostic,+Polyclinic,+Sonography+Centre,+Color+Doppler+in+Hinjewadi/@18.5915113,73.7439204,15z/data=!4m5!3m4!1s0x0:0xb370f3312216fce3!8m2!3d18.5915113!4d73.7439204"> <i class="fa fa-map-marker"></i></a>
+        <a class="subfloat" href="#AppointMent"> <i class="fa fa-calendar"></i> Make an Appointment</a>
+        <a class="calling" href="tel: 918379092000"> <i class="fa fa-phone"></i></a>
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        {% block scriptFile %}{% endblock scriptFile %}
+        <script src="{% static 'js/header.js' %}"></script>
+        
+    </body>
+</html>

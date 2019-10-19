@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% block meta %}
+    <title>Contact-Lifetree-Healthcare-And-Diagnostics</title>
+{% endblock meta %}
+{% block content %}
+            <!-- Sub Page Banner
+			============================================= -->
+			<section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
+				<div class="overlay"></div>
+				<div class="container">
+					<h1 class="entry-title">Gallery</h1>
+				</div>
+			</section>
+			<!-- Sub Page Content
+			============================================= -->
+			<div id="sub-page-content" class="clearfix">
+				<div class="container">
+					<!-- BEGIN GALLERY SECTION -->
+					<section class="gallery no-padding">
+							<!-- GALLERY NAV -->
+							<div class="gallery-filter-nav">
+                                <div class="filter active" data-filter="all">All</div>
+                                {% for cat in category %}
+                                    <div class="filter" data-filter=".ids{{ cat.id}}">{{ cat.name}}</div>
+                                {% endfor %}
+							</div>
+							<div id="Container-gallery">
+								<ul class="four-column-gallery clearfix">
+                                    {% for img in image %}
+                                        <li class="mix ids{{ img.cat_id }}">
+                                            <div class="gallery-item">
+                                                <div class="gallery-item-thumb">
+                                                    <span class="overlay"></span>
+                                                    <img src="{{ img.image.url }}" alt="">
+                                                    <a href="{{ img.image.url }}" data-fancybox-group="portfolio" class="hover-button-plus fancybox"></a>
+                                                </div>
+                                                <div class="gallery-item-info">
+                                                    <p><a href="#.">{{ img.name }}</a></p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+								</ul>
+							</div>
+					</section><!-- END GALLERY SECTION -->
+				</div>
+			</div><!--end sub-page-content-->
+
+{% endblock content %}
+
+{% block scriptFile %}
+    <!-- All Javascript 
+	============================================= -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.js' %}"></script>
+    <script src="{% static 'js/jquery-ui-1.10.3.custom.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/counter.js' %}"></script>
+    <script src="{% static 'js/waypoints.js' %}"></script>
+    <script src="{% static 'js/jquery.uniform.js' %}"></script>
+    <script src="{% static 'js/easyResponsiveTabs.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox-media.js' %}"></script>
+    <script src="{% static 'js/jquery.mixitup.js' %}"></script>
+    <script src="{% static 'js/forms-validation.js' %}"></script>
+    <script src="{% static 'js/jquery.jcarousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easypiechart.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+{% endblock scriptFile %}

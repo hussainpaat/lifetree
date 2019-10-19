@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{% block meta %}
+    <title>Blog - Lifetree-Healthcare-And-Diagnostics</title>
+{% endblock meta %}
+{% block content %}
+    			<!-- Sub Page Banner
+			============================================= -->
+			<section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
+				<div class="overlay"></div>
+				<div class="container">
+					<h1 class="entry-title">Blog</h1>
+				</div>
+			</section>
+			<!-- Sub Page Content
+			============================================= -->
+			<div id="sub-page-content" class="clearfix">
+				<div class="container">
+					<div class="row">
+						<!-- Blog Left
+						============================================= -->
+						<div class="col-md-9">
+							<h2 class="bordered light">Blog</h2>
+							<div class="row">
+								{% for bl in blogData %}
+									<div class="col-md-4">
+										<article class="blog-item">
+											<div class="blog-thumbnail">
+												<img alt="{{ bl.name }}" src="{{ bl.image.url }}">
+												<div class="blog-date"><p class="day">{{ bl.date|date:"d" }}</p><p class="monthyear">{{ bl.date|date:"M, Y" }}</p></div>
+											</div>
+											<div class="blog-content">
+												<h4 class="blog-title"><a href="#">{{ bl.name|truncatechars:19 }}</a></h4>
+												<p class="blog-meta"> Tags: <a href="#">{{ bl.cat }}</a></p>
+												{% comment %} <p>{{ bl.content|safe|truncatechars:315 }}</p> {% endcomment %}
+												<a href="/Blog-Detail/{{ bl.id }}/{{ bl.name | slugify }}" class="btn btn-default btn-mini btn-rounded">READ MORE</a>
+											</div>
+										</article>
+									</div>
+								{% endfor %}
+								
+							</div>
+						</div>
+						<aside class="col-md-3">
+							<!-- Categories Widget
+							============================================= -->
+							<div class="sidebar-widget clearfix">
+								<h2 class="bordered light">Categories</h2>
+								<ul class="tags">
+                                    <li><a href="{% url 'index' %}">All</a></li>
+                                    {% for cat in category %}
+                                        <li><a href="{% url 'index' %}">{{ cat.name }}</a></li>
+                                    {% endfor %}
+								</ul>
+							</div>							
+						</aside>
+					</div>
+				</div>
+			</div><!--end sub-page-content-->
+
+{% endblock content %}
+
+{% block scriptFile %}
+    <!-- All Javascript 
+	============================================= -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.js' %}"></script>
+    <script src="{% static 'js/jquery-ui-1.10.3.custom.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/counter.js' %}"></script>
+    <script src="{% static 'js/waypoints.js' %}"></script>
+    <script src="{% static 'js/jquery.uniform.js' %}"></script>
+    <script src="{% static 'js/easyResponsiveTabs.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox-media.js' %}"></script>
+    <script src="{% static 'js/jquery.mixitup.js' %}"></script>
+    <script src="{% static 'js/forms-validation.js' %}"></script>
+    <script src="{% static 'js/jquery.jcarousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easypiechart.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+{% endblock scriptFile %}

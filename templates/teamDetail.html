@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% block meta %}
+    <title>{{ doci.name}}</title>
+{% endblock meta %}
+{% block content %}
+        <section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
+			<div class="overlay"></div>
+			<div class="container">
+				<h1 class="entry-title">{{ doci.name}}</h1>
+			</div>
+		</section>
+		<div id="sub-page-content" class="clearfix">
+			<section class="team-description">
+				<div class="container">
+					<h2 class="light bordered">meet <span>specialist</span></h2>
+					<ul class="list-unstyled row">
+						<li>
+							<div class="doctors-img"><img src="{{ doci.image.url }}" width="531" alt="" title="">
+								<ul class="list-unstyled social2">
+									<li><a href="{{ doci.twitter}}" class="fb"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="{{ doci.facebook}}" class="twitter"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="{{ doci.instagram}}" class="g-plus"><i class="fa fa-google-plus"></i></a></li>
+								</ul>
+							</div>
+							<div class="doctors-detail">
+								<h4>{{ doci.name}}<span>{{ doci.position}}</span></h4>
+								<p><label class="heading">Speciality</label><label
+										class="detail">{{ doci.specialist}}</label></p>
+								<p><label class="heading">Degrees</label><label class="detail">{{ doci.degree}}</label>
+								</p>
+								<p><label class="heading">Experience</label><label class="detail">{{ doci.experience}}</label></p>
+                                <div class="doc-data">
+                                    <span class="heading-doc">Detail</span>
+                                    <span class="detail-doc">{{ doci.training | safe}}</span>
+                                </div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+        <section class="meet-the-doctors no-bg-img team-carousel">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="light bordered main-title">meet the <span>perfect specialists</span> team</h2>
+                </div>
+                <div class="height50"></div>
+                <div>
+                {% for doc in otherdoci %}
+                    <div class="col-md-3 team-member" titile="{{ doc.name }}">
+                        <div class="team-thumb">
+                            <img src="{{ doc.image.url }}" class="img-rounded" alt="{{ doc.name }}">
+                            <div class="links"><a href="{{ doc.facebook }}"><i class="fa fa-facebook"></i></a>
+                                <a href="{{ doc.twitter }}"><i class="fa fa-twitter"></i></a>
+                                <a href="{{ doc.instagram }}"><i class="fa fa-google-plus"></i></a></div>
+                        </div>
+                        <h5><a href="/Team-Detail/{{ doc.id }}/{{ doc.name }}/">{{ doc.name }}</a><br><span>{{ doc.position }}</span></h5>
+                        <p>{{ doc.specialist }}</p>
+                        <a href="/Team-Detail/{{ doc.id }}/{{ doc.name }}/"><em>- View Profile</em></a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="height50"></div>
+        </section>
+{% endblock content %}
+
+{% block scriptFile %}
+    <!-- All Javascript 
+	============================================= -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.js' %}"></script>
+    <script src="{% static 'js/jquery-ui-1.10.3.custom.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/counter.js' %}"></script>
+    <script src="{% static 'js/waypoints.js' %}"></script>
+    <script src="{% static 'js/jquery.uniform.js' %}"></script>
+    <script src="{% static 'js/easyResponsiveTabs.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox-media.js' %}"></script>
+    <script src="{% static 'js/jquery.mixitup.js' %}"></script>
+    <script src="{% static 'js/forms-validation.js' %}"></script>
+    <script src="{% static 'js/jquery.jcarousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easypiechart.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+{% endblock scriptFile %}

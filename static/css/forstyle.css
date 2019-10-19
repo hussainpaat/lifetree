@@ -1,0 +1,309 @@
+.p0{
+    padding: 0px !important;
+}
+.doc-data{
+    line-height: 17.3px;
+    padding: 7px 0;
+    float: left;
+}
+.heading-doc{
+    font-weight: 600;
+    width: 18%;
+    float: left;
+}
+.detail-doc{
+    width: 60%;
+    float: left;
+    color: #656565;
+}
+.detail-doc p{
+    border: none;
+    display: block;
+    padding: 3px 0;
+}
+.oustsideshape{
+    width: 45%;
+    border-radius: 2%;
+    margin: 0 25px 5px 0;
+    float: left;
+    -webkit-shape-outside: polygon(100% 0, 100% 100%, 50% 100%, 0 50%);
+    shape-outside: polygon(100% 0, 100% 100%, 50% 100%, 0 50%);
+}
+.slider-caption{
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+.slider-caption p{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: none;
+    color: #fff;
+}
+/* start icon  */
+.icon-barss {
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 11111;
+  }
+  
+  .icon-barss a {
+    display: block;
+    text-align: center;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 25px;
+    border-radius: 0 2px 2px 0;
+  }
+  
+  .facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .instagram {
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+    color: white;
+  }
+  
+  .linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .whatapp {
+    background: #25D366;
+    color: white;
+  }
+/* end icon    */
+/* appointment section  */
+
+#AppointMent{
+    display: none;
+  }
+  .forbg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0, .9);
+    /* background: url('../img/city.jpg');  */
+    z-index: 111111;
+    overflow: auto;
+  }
+  .forbg h5{
+    text-align: center;
+    font-size: 24px;
+  }
+  .forform{
+    width: 30%;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .forform input, select, textarea{
+        width: 100%;
+        margin: 9px 0;
+    }
+  .someInfo{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+  }
+  form .error, form .success{
+    font-weight: 700;
+    text-align: center;
+    color: red;
+  }
+  form .success{
+    color: green;
+  }
+  .subfloat{
+    position: fixed;
+    bottom: 185px;
+    right: -100px;
+    padding: 8px 25px;
+    background: #3f7746;
+    z-index: 11111;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+  }
+  .join{
+    margin-top: 15px;
+    background: #468c9c;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px;
+    border-radius: 3px;
+    width: 100%;
+    background: #3f7846;
+  }
+  .join:hover{
+    background: #1e4f5a;
+    color: #fff;
+    text-decoration: none;
+  }
+  .subfloat i{
+    padding: 0 9px;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .subfloat:hover{
+    color: #fff;
+  }
+/* end appt  */
+.sub-page-banner .overlay{
+    background: rgba(0,0,0,0.8);
+}
+.medicom-awesome-features-sec{
+    background: url(../myimg/features-bg.jpg) repeat center top;
+}
+.tab-slider{
+    background: url(../myimg/circle1.png) no-repeat 0 0;
+}
+.navbar-brand{
+    margin-top: 5px;
+}
+.navbar-brand img{
+    width: 170px;
+}
+.sub-page-banner{
+    height: 256px;
+}
+.entry-title{
+    padding: 90px 0 0;
+}
+.features i.feature-icon{
+    text-shadow: none;
+}
+.addoverlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+footer{
+    padding: 40px 0 1px;
+}
+footer.light{
+    background:#000000e8;
+}
+footer.light li a, footer.light .contact-widget p a, footer.light .contact-widget i, .footer-widget h4{
+    color: #fff !important;
+}
+footer.light .copyright{
+    margin: 15px 0 0;
+}
+footer.light .copyright a{
+    font-weight: 700;
+}
+.naviga, .calling{
+    display: none;
+  }
+@media (max-width: 992px){
+    footer{
+        padding: 40px 0 45px;
+    }
+    .awesome-features li.middle{
+        margin: 0 !important;
+    }
+    .navbar-brand img{
+        width: 170px;
+    }
+    .fixed-header.small-header .medicom-header .navbar-brand img{
+        width: 170px !important;
+    }
+    .fixed-header .medicom-header {
+        position: fixed !important;
+        top: 0px;
+        width: 100%;
+        background: #fff;
+    }
+    .fixed-header.small-header .medicom-header {
+        top: -5px !important;
+    }
+    .pads{
+        padding: 40px;
+    }
+    .team-member{
+        padding-bottom: 38px;
+    }
+    .forform{
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        padding: 25px;
+        border-radius: 0;
+        transform: translateX(0%);
+      }
+      .subfloat{
+        bottom: 0;
+        left: 14.5%;
+        transform: translate(-50%,-50%);
+        padding: 15px;
+        width: 71%;
+        transform: rotate(0deg);
+        font-size: 18px;
+      }
+      
+      .naviga, .calling{
+        display: block;
+        position: fixed;
+        bottom: 0;
+        padding: 5px 22px;
+        background: #893231;
+        z-index: 11111;
+        color: #fff;
+        font-family: 'Rubik', sans-serif;
+        letter-spacing: 1px;
+        font-weight: 500;
+        text-align: center;
+        border-radius: 5px;
+        width: 15%;
+        font-size: 32px;
+      }
+      .naviga{
+        left: 0;
+      }
+      .calling{
+        right: 0;
+      }
+      .subfloat i{
+        padding: 0 9px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .subfloat:hover{
+        color: #fff;
+      }
+
+    .back-to-top {
+        bottom: 60px;
+    }
+    
+}
